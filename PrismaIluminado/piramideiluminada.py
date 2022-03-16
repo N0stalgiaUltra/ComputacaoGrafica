@@ -2,6 +2,7 @@ from OpenGL.GLUT import *
 from OpenGL.GLU import *
 from OpenGL.GL import *
 import math
+import sys
 
 colors = {'Red': (1.,.0,.0),
 		  'Wine': (.5,0,0),
@@ -133,12 +134,11 @@ def init():
 	glEnable(GL_MULTISAMPLE)
 
 
-
 def config():
-	glutInit(sys.argv)
+        glutInit(sys.argv)
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH | GLUT_MULTISAMPLE)
 	glutInitWindowSize(800,800)
-	glutCreateWindow("Piramide")
+	glutCreateWindow("Piramide Iluminada")
 	glutDisplayFunc(draw)
 	glutMouseFunc(mouse_click_effects)
 	glEnable(GL_MULTISAMPLE)
@@ -147,9 +147,8 @@ def config():
 	gluPerspective(45,800.0/600.0,0.1,100.0)
 	glTranslatef(0.0,-2,-25)
 	glutTimerFunc(20,timer,1)
-	init()
-	glutMainLoop()
+        init()
+        glutMainLoop()
 
 if __name__ == '__main__':
-	config()
-	
+    config()
